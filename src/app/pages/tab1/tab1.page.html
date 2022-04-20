@@ -1,0 +1,19 @@
+<ion-header [translucent]="true" mode="ios">
+    <ion-toolbar>
+        <ion-title>
+            News
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    
+    <ion-header collapse="condense" mode="ios">
+        <ion-toolbar>
+            <ion-title size="large">News</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <app-news-list [articles]="articles"></app-news-list>
+
+</ion-content>

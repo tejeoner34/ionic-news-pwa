@@ -1,0 +1,37 @@
+<ion-header [translucent]="true" mode="ios">
+    <ion-toolbar>
+        <ion-title>
+            {{header | titlecase}}
+        </ion-title>
+
+    </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-text-center ion-padding" [fullscreen]="true">
+
+    <ion-header collapse="condense" mode="ios">
+        <ion-toolbar>
+            <ion-title size="large">{{header | titlecase}}</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-segment [value]="categories[0]" (ionChange)="segmentChanged($event)" mode="md" scrollable>
+        <ion-segment-button *ngFor="let category of categories; let i = index" [value]="category">
+            <ion-label>{{category}}</ion-label>
+        </ion-segment-button>
+    </ion-segment>
+
+
+
+    <app-news-list [articles]="articles"></app-news-list>
+
+
+    <!-- comento el infinite scroll para que funcione la app sin obtener los datos vía fetch (para hacer la PWA) -->
+
+    <!-- <ion-infinite-scroll threshold="100px" position="bottom" (ionInfinite)="loadData()">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll> -->
+
+</ion-content>
